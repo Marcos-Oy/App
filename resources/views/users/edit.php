@@ -36,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-header">
                                     <h2>
                                         Editar usuario
-                                        <a href="?control=Users&action=Show" class="justify-content-md-end">
+                                        <a href="?control=Users&action=show" class="justify-content-md-end">
                                             <button type="button" class="btn btn-secondary">
                                                 Volver
                                             </button>

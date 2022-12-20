@@ -39,20 +39,19 @@ function MenuActive() {
   //   }
 
   if (
-    URLactual == protocolo + "://" + servidor + "/App/" ||
     URLactual ==
-      protocolo + "://" + servidor + "/App/?control=Dashboard&action=Dash"
+    protocolo + "://" + servidor + "/App/?control=Dashboard&action=dash"
   ) {
     document.getElementById("Dash").className = "nav-link active"; //Activamos la opción
   }
 
   if (
     URLactual ==
-      protocolo + "://" + servidor + "/App/?control=Users&action=Show" ||
+      protocolo + "://" + servidor + "/App/?control=Users&action=show" ||
     URLactual ==
-      protocolo + "://" + servidor + "/App/?control=Users&action=Create" ||
+      protocolo + "://" + servidor + "/App/?control=Users&action=create" ||
     URLactual ==
-      protocolo + "://" + servidor + "/App/?control=Users&action=Edit"
+      protocolo + "://" + servidor + "/App/?control=Users&action=edit"
   ) {
     document.getElementById("ShowUsers").className = "nav-link active"; //Activamos la opción
   }

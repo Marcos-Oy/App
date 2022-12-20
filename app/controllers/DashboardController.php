@@ -1,10 +1,12 @@
 <?php
 
 class DashboardController{
-    public function Dash()
+    
+    public function dash()
     {
         include "resources/views/dashboard/dashboard.php";   
     }
+    
 }
 
 ?>

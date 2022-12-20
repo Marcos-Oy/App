@@ -5,6 +5,7 @@
 		require_once('app/controllers/' . $control . 'Controller.php');
 		//crea el controlador
 		switch($control){
+			case 'Login':$control= new LoginController();break;
 			case 'Dashboard':$control= new DashboardController();break;
 			case 'Users':$control= new UsersController();break;
 
@@ -15,8 +16,9 @@
 
 	//array con los controladores y sus respectivas acciones
 	$controllers= array(
-						'Dashboard'=>['Dash'],
-						'Users'=>['Show','Create','Edit'],
+						'Login'=>['login','forgot_password','register'],
+						'Dashboard'=>['dash'],
+						'Users'=>['show','create','edit'],
 						);
 						
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers

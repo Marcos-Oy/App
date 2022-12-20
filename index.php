@@ -10,8 +10,8 @@
 	} 
 	else 
 	{
-		$control='Dashboard';
-		$action='Dash';
+		$control='Login';
+		$action='login';
 		
 	}	
 	//carga la vista layout.php

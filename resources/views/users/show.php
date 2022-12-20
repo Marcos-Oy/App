@@ -31,7 +31,7 @@
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2>Usuarios
-                                        <a href="?control=Users&action=Create" class="justify-content-md-end">
+                                        <a href="?control=Users&action=create" class="justify-content-md-end">
                                             <button type="button" class="btn btn-success">
                                                 Nuevo
                                             </button>
@@ -63,7 +63,7 @@
                                                 <td>
                                                     <div class="row">
                                                         <div class="form-group">
-                                                            <form method='POST' action='?control=Users&action=Edit'>
+                                                            <form method='POST' action='?control=Users&action=edit'>
                                                                 <button class="btn btn-warning" type='submit'
                                                                     name='username' value=""><i class="fas fa-pen"
                                                                         aria-hidden="true"></i>

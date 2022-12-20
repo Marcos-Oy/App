@@ -3,17 +3,17 @@
 class UsersController{
 
     /*************************LLAMADA A LAS VISTAS**********************/
-    public function Show()
+    public function show()
     {
         include "resources/views/users/show.php";   
     }
 
-    public function Create()
+    public function create()
     {
         include "resources/views/users/create.php";   
     } 
 
-    public function Edit()
+    public function edit()
     {
         include "resources/views/users/edit.php";   
     }    

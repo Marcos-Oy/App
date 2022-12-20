@@ -54,7 +54,7 @@
                 </li> -->
 
                 <li class="nav-item">
-                    <a id="Dash" href="?control=Dashboard&action=Dash" class="nav-link">
+                    <a id="Dash" href="?control=Dashboard&action=dash" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -64,7 +64,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a id="ShowUsers" href="?control=Users&action=Show" class="nav-link">
+                    <a id="ShowUsers" href="?control=Users&action=show" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Users
