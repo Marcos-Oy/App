@@ -3,7 +3,7 @@
 class UsersModel{
     
     private $id;
-    private $user;
+    private $username;
     private $name;
     private $lastname_p;
     private $lastname_m;
@@ -16,8 +16,8 @@ class UsersModel{
     public function getId(){ return $this->id; }
     public function setId($id): self { $this->id = $id; return $this; }
 
-    public function getUser(){ return $this->user; }
-    public function setUser($user): self { $this->user = $user; return $this; }
+    public function getUsername(){ return $this->username; }
+    public function setUsername($username): self { $this->username = $username; return $this; }
 
     public function getName(){ return $this->name; }
     public function setName($name): self { $this->name = $name; return $this; }
