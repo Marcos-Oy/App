@@ -5,7 +5,7 @@ class UsersDAO{
     public function __construct()
 	{
 		require_once ("config/mysqli.php");
-		$this->database = mysqli::connection();
+		$this->database = db::connection();
 	}
 
 	//metodo que devuelve todo la tabla usuario
@@ -17,7 +17,14 @@ class UsersDAO{
 		{
 			$this->request[] = $row;
 		}
-		return $this->request;
+		if ($result == true) 
+		{
+			return $this->request;
+		} 
+		else 
+		{
+			return false;
+		}
 	}
 
 	public function insert_users()

@@ -1,5 +1,5 @@
 <?php
-	class mysqli{
+	class db{
 		private $server;
 		private $username;
 		private $pass;

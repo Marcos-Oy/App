@@ -44,22 +44,25 @@
                                         <thead>
                                             <tr>
                                                 <th>Usuario</th>
+                                                <th>Nombre completo</th>
                                                 <th>Rut</th>
-                                                <th>Nombre</th>
-                                                <th>E-Mail</th>
                                                 <th>Teléfono</th>
+                                                <th>E-Mail</th>
                                                 <th>Cargo</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if($rows): ?>
+                                            <?php foreach($rows as $row): ?>
                                             <tr>
-                                                <td>FILA</td>
-                                                <td>FILA</td>
-                                                <td>FILA</td>
-                                                <td>FILA</td>
-                                                <td>FILA</td>
-                                                <td>FILA</td>
+                                                <td><?= $row['username'] ?></td>
+                                                <td><?= $row['name']." ".$row['lastname_p']." ".$row['lastname_m'] ?>
+                                                </td>
+                                                <td><?= $row['rut'] ?></td>
+                                                <td><?= $row['phone'] ?></td>
+                                                <td><?= $row['mail'] ?></td>
+                                                <td><?= $row['role'] ?></td>
                                                 <td>
                                                     <div class="row">
                                                         <div class="form-group">
@@ -70,7 +73,7 @@
                                                                 </button>
                                                             </form>
                                                         </div>
-
+                                                        <?php if($row['state'] == 1): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
                                                             <form method='POST'
@@ -78,7 +81,8 @@
 
                                                                 <!-- Button trigger modal -->
                                                                 <button type="button" class="btn btn-primary"
-                                                                    data-toggle="modal" data-target="#modal-sm-des">
+                                                                    data-toggle="modal"
+                                                                    data-target="#modal-sm-des<?= $row['username'] ?>">
                                                                     <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
 
@@ -118,6 +122,8 @@
                                                                 </div>
                                                             </form>
                                                         </div>
+                                                        <?php endif; ?>
+                                                        <?php if($row['state'] == 0): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
                                                             <form method='POST'
@@ -128,7 +134,8 @@
                                                                     <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
 
-                                                                <div class="modal fade" id="modal-sm-act">
+                                                                <div class="modal fade"
+                                                                    id="modal-sm-act<?= $row['username'] ?>">
                                                                     <div class="modal-dialog modal-sm">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
@@ -163,17 +170,24 @@
                                                                 </div>
                                                             </form>
                                                         </div>
+                                                        <?php endif; ?>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php endforeach; ?>
+                                            <?php else: ?>
+                                            <tr>
+                                                <td colspan="3" class="text-center">No hay registros actualmente</td>
+                                            </tr>
+                                            <?php endif; ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>Usuario</th>
+                                                <th>Nombre completo</th>
                                                 <th>Rut</th>
-                                                <th>Nombre</th>
-                                                <th>E-Mail</th>
                                                 <th>Teléfono</th>
+                                                <th>E-Mail</th>
                                                 <th>Cargo</th>
                                                 <th>Acciones</th>
                                             </tr>
