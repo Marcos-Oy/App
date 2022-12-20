@@ -1,12 +1,25 @@
 <?php
 
 class UsersController{
-    public function ShowUsers()
+
+    /*************************LLAMADA A LAS VISTAS**********************/
+    public function Show()
     {
-        return ($this->model->index()) ? $this->model->index() : false;
         include "resources/views/users/show.php";   
     }
+
+    public function Create()
+    {
+        include "resources/views/users/create.php";   
+    } 
+
+    public function Edit()
+    {
+        include "resources/views/users/edit.php";   
+    }    
     
+    /*************************CRUD USUARIO**********************/
+
 }
 
 ?>

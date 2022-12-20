@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -23,100 +19,182 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="wrapper">
 
         <?php include ('resources/views/layout/navbar.php'); ?>
-        <?php include ('resources/views/layout/main-sidebar.php'); ?>
+        <?php include ('resources/views/layout/MainSidebar.php'); ?>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Usuarios</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Usuarios</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
-
             <!-- Main content -->
-            <div class="content">
+            <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                    <p class="card-text">
-                                        Some quick example text to build on the card title and make up the bulk of the
-                                        card's
-                                        content.
-                                    </p>
-
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
-                                </div>
-                            </div>
-
-                            <div class="card card-primary card-outline">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                    <p class="card-text">
-                                        Some quick example text to build on the card title and make up the bulk of the
-                                        card's
-                                        content.
-                                    </p>
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
-                                </div>
-                            </div><!-- /.card -->
-                        </div>
-                        <!-- /.col-md-6 -->
-                        <div class="col-lg-6">
-                            <div class="card">
+                        <div class="col-12">
+                            <div class="card card-dark">
                                 <div class="card-header">
-                                    <h5 class="m-0">Featured</h5>
+                                    <h2>Usuarios
+                                        <a href="?control=Users&action=Create" class="justify-content-md-end">
+                                            <button type="button" class="btn btn-success">
+                                                Nuevo
+                                            </button>
+                                        </a>
+                                    </h2>
                                 </div>
+                                <!-- /.card-header -->
                                 <div class="card-body">
-                                    <h6 class="card-title">Special title treatment</h6>
+                                    <table id="UsersTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Usuario</th>
+                                                <th>Rut</th>
+                                                <th>Nombre</th>
+                                                <th>E-Mail</th>
+                                                <th>Teléfono</th>
+                                                <th>Cargo</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>FILA</td>
+                                                <td>FILA</td>
+                                                <td>FILA</td>
+                                                <td>FILA</td>
+                                                <td>FILA</td>
+                                                <td>FILA</td>
+                                                <td>
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <form method='POST' action='?control=Users&action=Edit'>
+                                                                <button class="btn btn-warning" type='submit'
+                                                                    name='username' value=""><i class="fas fa-pen"
+                                                                        aria-hidden="true"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
 
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-group">
+                                                            <form method='POST'
+                                                                action='?control=Users&action=Eliminarusuario'>
+
+                                                                <!-- Button trigger modal -->
+                                                                <button type="button" class="btn btn-primary"
+                                                                    data-toggle="modal" data-target="#modal-sm-des">
+                                                                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                                                                </button>
+
+                                                                <div class="modal fade" id="modal-sm-des">
+                                                                    <div class="modal-dialog modal-sm">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Desactivar
+                                                                                    usuario
+                                                                                </h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>¿Desea desactivar el usuario de?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="modal-footer justify-content-between">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Cancelar</button>
+                                                                                <button class="btn btn-danger"
+                                                                                    type='submit' name='username'
+                                                                                    value="">
+                                                                                    Aceptar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- /.modal-content -->
+                                                                    </div>
+                                                                    <!-- /.modal-dialog -->
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-group">
+                                                            <form method='POST'
+                                                                action='?control=Users&action=Activarusuario'>
+                                                                <!-- Button trigger modal -->
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-toggle="modal" data-target="#modal-sm-act">
+                                                                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                                                                </button>
+
+                                                                <div class="modal fade" id="modal-sm-act">
+                                                                    <div class="modal-dialog modal-sm">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Activar usuario
+                                                                                </h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>¿Desea activar el usuario de?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="modal-footer justify-content-between">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Cancelar</button>
+                                                                                <button class="btn btn-success"
+                                                                                    type='submit' name='username'
+                                                                                    value="">
+                                                                                    Aceptar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- /.modal-content -->
+                                                                    </div>
+                                                                    <!-- /.modal-dialog -->
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Usuario</th>
+                                                <th>Rut</th>
+                                                <th>Nombre</th>
+                                                <th>E-Mail</th>
+                                                <th>Teléfono</th>
+                                                <th>Cargo</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
                                 </div>
+                                <!-- /.card-body -->
                             </div>
-
-                            <div class="card card-primary card-outline">
-                                <div class="card-header">
-                                    <h5 class="m-0">Featured</h5>
-                                </div>
-                                <div class="card-body">
-                                    <h6 class="card-title">Special title treatment</h6>
-
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
+                            <!-- /.card -->
                         </div>
-                        <!-- /.col-md-6 -->
+                        <!-- /.col -->
                     </div>
                     <!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
-        <?php include ('resources/views/layout/control-sidebar.php'); ?>
+        <?php include ('resources/views/layout/ControlSidebar.php'); ?>
         <?php include ('resources/views/layout/footer.php'); ?>
 
     </div>
@@ -127,6 +205,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="public/dist/js/adminlte.min.js"></script>
+    <!-- DataTables -->
+    <?php include ('routes/DataTables.php'); ?>
 </body>
 
 </html>

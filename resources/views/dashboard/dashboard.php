@@ -23,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="wrapper">
 
         <?php include ('resources/views/layout/navbar.php'); ?>
-        <?php include ('resources/views/layout/main-sidebar.php'); ?>
+        <?php include ('resources/views/layout/MainSidebar.php'); ?>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -116,7 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.content-wrapper -->
 
-        <?php include ('resources/views/layout/control-sidebar.php'); ?>
+        <?php include ('resources/views/layout/ControlSidebar.php'); ?>
         <?php include ('resources/views/layout/footer.php'); ?>
 
     </div>
