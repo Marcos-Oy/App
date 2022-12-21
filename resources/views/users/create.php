@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="?control=Users&action=Crearusuario">
+                                    <form method="POST" action="?control=Users&action=create_users">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
@@ -75,23 +75,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-sm-3">
 
                                                 <div class="form-group">
-                                                    <label>Teléfono 1</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fas">+56</i></span>
-                                                        </div>
-                                                        <input id="tel1" name="tel1" type="number" class="form-control"
-                                                            placeholder="Ingrese número aquí...">
-                                                    </div>
+                                                    <label>RUT</label>
+                                                    <input id="rut" name="rut" type="text" class="form-control"
+                                                        placeholder="Ingrese rut aquí...">
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label>Teléfono 2</label>
+                                                    <label>Teléfono</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
-                                                        <input id="tel2" name="tel2" type="number" class="form-control"
+                                                        <input id="tel" name="tel" type="number" class="form-control"
                                                             placeholder="Ingrese número aquí...">
                                                     </div>
                                                 </div>
@@ -112,12 +107,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <!-- COLUMNA 3 -->
 
                                             <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Nombre de usuario</label>
+                                                    <input id="username" type="text" name="username"
+                                                        class="form-control"
+                                                        placeholder="Ingrese nombre de usuario aquí...">
+                                                </div>
 
                                                 <div class="form-group">
-                                                    <label>Seleccionar Cargo</label>
-                                                    <select id="cargo" name="cargo" class="form-control">
+                                                    <label>Seleccionar Rol</label>
+                                                    <select id="role" name="role" class="form-control">
 
-                                                        <option selected>Seleccionar Cargos</option>
+                                                        <option selected>Seleccionar rol de usuario</option>
+                                                        <option value="admin">admin</option>
 
                                                     </select>
                                                 </div>

@@ -8,7 +8,6 @@
 			case 'Login':$control= new LoginController();break;
 			case 'Dashboard':$control= new DashboardController();break;
 			case 'Users':$control= new UsersController();break;
-
 		}
 		//llama a la acción del controlador
 		$control->{$action }();
@@ -18,7 +17,7 @@
 	$controllers= array(
 						'Login'=>['login','forgot_password','register'],
 						'Dashboard'=>['dash'],
-						'Users'=>['show','create','edit'],
+						'Users'=>['show','create','edit','create_users'],
 						);
 						
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers

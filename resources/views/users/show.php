@@ -48,7 +48,7 @@
                                                 <th>Rut</th>
                                                 <th>Teléfono</th>
                                                 <th>E-Mail</th>
-                                                <th>Cargo</th>
+                                                <th>Rol</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -188,7 +188,7 @@
                                                 <th>Rut</th>
                                                 <th>Teléfono</th>
                                                 <th>E-Mail</th>
-                                                <th>Cargo</th>
+                                                <th>Rol</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </tfoot>

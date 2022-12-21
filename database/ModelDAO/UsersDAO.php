@@ -1,7 +1,7 @@
 <?php
-
 //CRUD o consultas
 class UsersDAO{
+
     public function __construct()
 	{
 		require_once ("config/mysqli.php");
@@ -27,9 +27,12 @@ class UsersDAO{
 		}
 	}
 
-	public function insert_users()
+	public function insert_users($username,$rut,$name,$lastname_p,$lastname_m,$phone,$mail,$role)
 	{
-		$query = " ";
+		$apt= new UsersModel();
+		$query = "INSERT INTO users (username, rut, name, lastname_p, lastname_m, phone, mail, role, state, password)
+					VALUES ('".$username."', '".$rut."', '".$name."', '".$lastname_p."', 
+					'".$lastname_m."', '".$phone."', '".$mail."', '".$role."', '1', '123456'); ";
 		$result = $this->database->query($query);
 		if ($result == true) 
 		{
