@@ -19,6 +19,15 @@ class UsersController{
 
     public function edit()
     {
+        require_once ("database/ModelDAO/UsersDAO.php");
+        $obj = new UsersDAO();
+
+        require_once ("database/model/UsersModel.php");
+        $apt = new UsersModel();  
+
+        $apt->setUsername($_POST['username']);
+        $result = $obj->show_by_username($apt->getUsername());
+        
         require_once ("resources/views/users/edit.php");   
     }    
     
@@ -56,6 +65,40 @@ class UsersController{
 			window.location= '?control=Users&action=create'</script>";
 		}
     } 
+
+    public function edit_users()
+    {
+        require_once ("database/ModelDAO/UsersDAO.php");
+        $obj = new UsersDAO();
+
+        require_once ("database/model/UsersModel.php");
+        $apt = new UsersModel();
+        $apt->setUsername($_POST['username']); 
+        $apt->setName($_POST['nombre']);
+		$apt->setLastnameP($_POST['paterno']);
+		$apt->setLastnameM($_POST['materno']);
+        $apt->setMail($_POST['email']);
+		$apt->setPhone($_POST['tel']);
+        $apt->setRole($_POST['role']);
+        $apt->setRut($_POST['rut']);
+        $apt->setUsername2($_POST['username2']);
+
+        $id = $obj->update_users($apt->getUsername(),$apt->getRut(),$apt->getName(),
+        $apt->getLastnameP(),$apt->getLastnameM(),$apt->getPhone(),$apt->getMail(),
+        $apt->getRole(),$apt->getUsername2());
+
+        if(isset($id) && !empty($id))
+		{
+			echo "<script>alert('Actualización correcta');
+			window.location= '?control=Users&action=show'</script>";
+		}
+		else
+		{
+			echo "<script>alert('No Exitoso');
+			window.location= '?control=Users&action=show'</script>";
+		}
+
+    }
 
 }
 

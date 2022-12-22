@@ -27,16 +27,13 @@ class UsersDAO{
 		}
 	}
 
-	public function insert_users($username,$rut,$name,$lastname_p,$lastname_m,$phone,$mail,$role)
+	public function show_by_username($username)
 	{
-		$apt= new UsersModel();
-		$query = "INSERT INTO users (username, rut, name, lastname_p, lastname_m, phone, mail, role, state, password)
-					VALUES ('".$username."', '".$rut."', '".$name."', '".$lastname_p."', 
-					'".$lastname_m."', '".$phone."', '".$mail."', '".$role."', '1', '123456'); ";
+		$query = "select * from users where username = '".$username."';";
 		$result = $this->database->query($query);
 		if ($result == true) 
 		{
-			return true;
+			return $result;
 		} 
 		else 
 		{
@@ -44,13 +41,31 @@ class UsersDAO{
 		}
 	}
 
-	public function edit_users()
+	public function insert_users($username,$rut,$name,$lastname_p,$lastname_m,$phone,$mail,$role)
 	{
-		$query=" ";
+		$query = "INSERT INTO users (username, rut, name, lastname_p, lastname_m, phone, mail, role, state, password)
+					VALUES ('".$username."', '".$rut."', '".$name."', '".$lastname_p."', 
+					'".$lastname_m."', '".$phone."', '".$mail."', '".$role."', '1', '123456'); ";
+		$result = $this->database->query($query);
+		if ($result == true) 
+		{
+			return $result;
+		} 
+		else 
+		{
+			return false;
+		}
+	}
+
+	public function update_users($username,$rut,$name,$lastname_p,$lastname_m,$phone,$mail,$role,$username2)
+	{
+		$query = "UPDATE users SET username = '".$username."', name = '".$name."', lastname_p = '".$lastname_p."', 
+					lastname_m = '".$lastname_m."', phone = '".$phone."', mail = '".$mail."', role = '".$role."'
+					WHERE username = '".$username2."';";
 		$result=$this->database->query($query);
 		if($result==true)
 		{
-		return true;
+			return $result;
 		}
 		else
 		{
@@ -58,13 +73,13 @@ class UsersDAO{
 		}	
 	}
 
-	public function delete_users()
+	public function drop_users()
 	{
 		$query=" ";
 		$result=$this->database->query($query);
 		if($result==true)
 		{
-		return true;
+			return $result;
 		}
 		else
 		{

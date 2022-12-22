@@ -45,31 +45,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="?control=Users&action=Editarusuario">
+                                    <form method="POST" action="?control=Users&action=edit_users">
+                                        <?php while($rows = $result->fetch_assoc()) { ?>
 
                                         <div class="row">
                                             <!-- COLUMNA 1 -->
-                                            <input type="hidden" value="" name="username">
-
-                                            <input type="hidden" value="" name="activo">
-
                                             <div class="col-sm-4">
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Rut</label>
-                                                    <input type="text" class="form-control" value="" name="nombre">
+                                                    <input type="text" class="form-control"
+                                                        value="<?php echo $rows['rut'];?>" name="rut">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control" value="" name="nombre">
+                                                    <input type="text" class="form-control"
+                                                        value="<?php echo $rows['name'];?>" name="nombre">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Apellido Paterno</label>
-                                                    <input type="text" class="form-control" value="" name="paterno">
+                                                    <input type="text" class="form-control"
+                                                        value="<?php echo $rows['lastname_p'];?>" name="paterno">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Apellido Materno</label>
-                                                    <input type="text" class="form-control" value="" name="materno">
+                                                    <input type="text" class="form-control"
+                                                        value="<?php echo $rows['lastname_m'];?>" name="materno">
                                                 </div>
 
                                             </div>
@@ -79,12 +80,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-sm-4">
 
                                                 <div class="form-group">
-                                                    <label>Teléfono 1</label>
+                                                    <label>Teléfono</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
-                                                        <input type="number" class="form-control" value="" name="tel1">
+                                                        <input type="number" class="form-control"
+                                                            value="<?php echo $rows['phone'];?>" name="tel">
                                                     </div>
                                                 </div>
 
@@ -95,7 +97,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <span class="input-group-text"><i
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
-                                                        <input type="email" class="form-control" value="" name="email">
+                                                        <input type="email" class="form-control"
+                                                            value="<?php echo $rows['mail'];?>" name="email">
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,10 +107,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                             <div class="col-sm-4">
                                                 <div class="form-group">
-                                                    <label>Seleccionar Cargo</label>
-                                                    <select class="form-control" name="cargo">
-                                                        <option value="">Administrador</option>
+                                                    <label>Seleccionar Rol</label>
+                                                    <select class="form-control" name="role">
+                                                        <option value="Admin">Admin</option>
                                                     </select>
+                                                </div>
+
+                                                <input type="hidden" value="<?php echo $rows['username'];?>"
+                                                    name="username2">
+
+                                                <div class="form-group">
+                                                    <label>Nombre de usuario</label>
+                                                    <input type="text" class="form-control"
+                                                        value="<?php echo $rows['username'];?>" name="username">
                                                 </div>
                                             </div>
                                         </div>
@@ -120,15 +132,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-4">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h2>Contraseña
-                                    </h2>
+                                    <h2>Contraseña</h2>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <form method="POST" action="?control=Users&action=PasswordReset">
                                         <input type="hidden" value="" name="username">
-                                        <button type="submit" class="btn btn-warning col-sm-12">⚠ Restablecer
-                                            ⚠</button>
+                                        <?php } ?>
+                                        <button type="submit" class="btn btn-warning col-sm-12">⚠ Restablecer ⚠</button>
                                     </form>
                                 </div>
                             </div>

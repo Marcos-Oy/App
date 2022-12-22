@@ -4,6 +4,7 @@ class UsersModel{
     
     protected $id;
     protected $username;
+    protected $username_2;
     protected $name;
     protected $lastname_p;
     protected $lastname_m;
@@ -32,6 +33,16 @@ class UsersModel{
     public function setUsername($username): self 
     { 
         $this->username = $username; 
+        return $this; 
+    }
+
+    public function getUsername2()
+    { 
+        return $this->username_2; 
+    }
+    public function setUsername2($username_2): self 
+    { 
+        $this->username_2 = $username_2; 
         return $this; 
     }
 

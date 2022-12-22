@@ -68,8 +68,8 @@
                                                         <div class="form-group">
                                                             <form method='POST' action='?control=Users&action=edit'>
                                                                 <button class="btn btn-warning" type='submit'
-                                                                    name='username' value=""><i class="fas fa-pen"
-                                                                        aria-hidden="true"></i>
+                                                                    name='username' value=<?= $row['username'];?>>
+                                                                    <i class="fas fa-pen" aria-hidden="true"></i>
                                                                 </button>
                                                             </form>
                                                         </div>
