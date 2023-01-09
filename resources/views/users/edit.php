@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="?control=Users&action=edit_users">
+                                    <form method="POST" action="?control=Users&action=modify_users">
                                         <?php while($rows = $result->fetch_assoc()) { ?>
 
                                         <div class="row">

@@ -66,7 +66,7 @@ class UsersController{
 		}
     } 
 
-    public function edit_users()
+    public function modify_users()
     {
         require_once ("database/ModelDAO/UsersDAO.php");
         $obj = new UsersDAO();
@@ -98,6 +98,29 @@ class UsersController{
 			window.location= '?control=Users&action=show'</script>";
 		}
 
+    }
+
+    public function modify_user_status(){
+        require_once ("database/ModelDAO/UsersDAO.php");
+        $obj = new UsersDAO();
+
+        require_once ("database/model/UsersModel.php");
+        $apt = new UsersModel();
+        $apt->setUsername($_POST['username']); 
+        $apt->setState($_POST['state']);
+
+        $id = $obj-> update_user_status($apt->getUsername(),$apt->getState());
+
+        if(isset($id) && !empty($id))
+		{
+			echo "<script>alert('Actualización correcta');
+			window.location= '?control=Users&action=show'</script>";
+		}
+		else
+		{
+			echo "<script>alert('No Exitoso');
+			window.location= '?control=Users&action=show'</script>";
+		}
     }
 
 }

@@ -73,6 +73,20 @@ class UsersDAO{
 		}	
 	}
 
+	public function update_user_status($username,$state)
+	{
+		$query = "UPDATE users SET state = '".$state."' WHERE username = '".$username."';";
+		$result=$this->database->query($query);
+		if($result==true)
+		{
+			return $result;
+		}
+		else
+		{
+			return false;
+		}	
+	}
+
 	public function drop_users()
 	{
 		$query=" ";

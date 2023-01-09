@@ -17,7 +17,7 @@
 	$controllers= array(
 						'Login'=>['login','forgot_password','register'],
 						'Dashboard'=>['dash'],
-						'Users'=>['show','create','edit','create_users','edit_users'],
+						'Users'=>['show','create','edit','create_users','modify_users','modify_user_status'],
 						);
 						
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
