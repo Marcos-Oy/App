@@ -87,9 +87,9 @@ class UsersDAO{
 		}	
 	}
 
-	public function drop_users()
+	public function delete_users($username)
 	{
-		$query=" ";
+		$query="DELETE FROM users WHERE username ='".$username."';";
 		$result=$this->database->query($query);
 		if($result==true)
 		{

@@ -74,6 +74,17 @@
                                                             </form>
                                                         </div>
 
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-group">
+                                                            <form method='POST'
+                                                                action='?control=Users&action=erase_users'>
+                                                                <button class="btn btn-danger" type='submit'
+                                                                    name='username' value=<?= $row['username'];?>>
+                                                                    <i class="fas fa-trash" aria-hidden="true"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+
 
 
                                                         <?php if($row['state'] == 1): ?>

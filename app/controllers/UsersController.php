@@ -123,6 +123,28 @@ class UsersController{
 		}
     }
 
+    public function erase_users(){
+        require_once ("database/ModelDAO/UsersDAO.php");
+        $obj = new UsersDAO();
+
+        require_once ("database/model/UsersModel.php");
+        $apt = new UsersModel();
+        $apt->setUsername($_POST['username']);
+
+        $id = $obj-> delete_users($apt->getUsername());
+
+        if(isset($id) && !empty($id))
+		{
+			echo "<script>alert('Borrado satisfactoriamente.');
+			window.location= '?control=Users&action=show'</script>";
+		}
+		else
+		{
+			echo "<script>alert('No Exitoso');
+			window.location= '?control=Users&action=show'</script>";
+		}
+    }
+
 }
 
 ?>
